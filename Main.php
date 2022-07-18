@@ -14,17 +14,18 @@ $counter = 0;
 
 
 /** 
- * Looping Pertama
+ * Looping Pertama pembuatan adt
  * untuk mencari State, Activity Name, dan ID 
  * */
-for ($i = 0; $i < count($data); $i++){
+for ($i = 0; $i < count($data); $i++) {
 
     // Activity State
-    if( (str_contains($data[$i], '(object ActivityStateView ')) ){
+    if ((str_contains($data[$i], '(object ActivityStateView '))) {
         $activity_state = "ActivityState";
-        $activity_name = str_replace('"', '', trim($data[$i],"\t     (object ActivityStateView "));
+
+        $activity_name = str_replace('"', '', trim($data[$i], "\t     (object ActivityStateView "));
         $activity_name = str_replace('@', '', trim($activity_name));
-        $id = substr($activity_name,-2);
+        $id = substr($activity_name, -2);
         $activity_name = preg_replace('/[0-9]+/', '', $activity_name);
         $counter++;
 
@@ -37,11 +38,12 @@ for ($i = 0; $i < count($data); $i++){
     }
 
     // DecisionState
-    elseif( (str_contains($data[$i], '(object DecisionView ')) ){
+    elseif ((str_contains($data[$i], '(object DecisionView '))) {
         $activity_state = "DecisionState";
-        $activity_name = str_replace('"', '', trim($data[$i],"\t     (object DecisionView "));
+
+        $activity_name = str_replace('"', '', trim($data[$i], "\t     (object DecisionView "));
         $activity_name = str_replace('@', '', trim($activity_name));
-        $id = substr($activity_name,-2);
+        $id = substr($activity_name, -2);
         $activity_name = preg_replace('/[0-9]+/', '', $activity_name);
         $counter++;
 
@@ -54,20 +56,20 @@ for ($i = 0; $i < count($data); $i++){
     }
 
     //StartState & EndState
-    elseif( (str_contains($data[$i], '(object StateView ')) ) {
-        $activity_state = str_replace('"', '', trim($data[$i],"\t     (object StateView "));
+    elseif ((str_contains($data[$i], '(object StateView '))) {
+        $activity_state = str_replace('"', '', trim($data[$i], "\t     (object StateView "));
         $activity_state = str_replace('@', '', trim($activity_state));
         $activity_state = str_replace('$', '', trim($activity_state));
         $activity_state = preg_replace('/UNNAMED/i', '', $activity_state);
-        $activity_state = preg_replace('/[0-9]+/','', $activity_state);
+        $activity_state = preg_replace('/[0-9]+/', '', $activity_state);
         $activity_state = str_replace(' ', '', trim($activity_state));
-        
-        $activity_name = str_replace('"', '', trim($data[$i],"\t     (object StateView "));
-        $activity_name = preg_replace('/StartState/', '',$activity_name);
+
+        $activity_name = str_replace('"', '', trim($data[$i], "\t     (object StateView "));
+        $activity_name = preg_replace('/StartState/', '', $activity_name);
         $activity_name = preg_replace('/EndState/', '', $activity_name);
         $activity_name = str_replace('@', '', trim($activity_name));
-        $id = substr($activity_name,-2);
-        $activity_name = preg_replace('/[0-9]+/','', $activity_name);
+        $id = substr($activity_name, -2);
+        $activity_name = preg_replace('/[0-9]+/', '', $activity_name);
         $counter++;
 
         $hasil[$counter] = array(
@@ -80,30 +82,44 @@ for ($i = 0; $i < count($data); $i++){
 }
 
 /** 
- * Looping Pertama
+ * Looping Kedua
  * untuk mencari Dependency 
  * */
-for ($i = 0; $i < count($data); $i++){
 
-        if( (str_contains($data[$i], '(object TransView ')) ){
+for ($i = 0; $i < count($data); $i++) {
 
-            $client = str_replace('"', '', trim($data[$i+4],"\t     client\t@ \n"));
-            $supplier = str_replace('"', '', trim($data[$i+5],"\t     supplier\t@ \n"));
+    if ((str_contains($data[$i], '(object TransView '))) {
 
-            for ($urutan = 1; $urutan <= count($hasil); $urutan++) { 
-                
-                if ($hasil[$urutan]['ID'] == $supplier) {
-                    $hasil[$urutan]["Dependency"] = $client;
-                }else if($hasil[$urutan]["State"] == "StartState"){
-                    $hasil[$urutan]["Dependency"] = 0;
-                }
+        $client = str_replace('"', '', trim($data[$i + 4], "\t     client\t@ \n"));
+        $supplier = str_replace('"', '', trim($data[$i + 5], "\t     supplier\t@ \n"));
 
+        for ($urutan = 1; $urutan <= count($hasil); $urutan++) {
+
+            if ($hasil[$urutan]['ID'] == $supplier) {
+                $hasil[$urutan]["Dependency"] = $client;
             }
-            
+            else if ($hasil[$urutan]["State"] == "StartState") {
+                $hasil[$urutan]["Dependency"] = 0;
+            }
         }
-        
-print_r($hasil);
+    }
 }
+print_r($hasil);
 
+/** 
+ * Looping Ketiga pembuatan adg
+ * untuk mencari graph
+ * */
+
+for ($i = 0; $i < count($data); $i++) {
+
+    if ((str_contains($data[$i], '(object TransView '))) {
+
+        $client = str_replace('', '', trim($data[$i + 4], "\t     client   @"));
+        $client = str_replace('\t', '', trim($client));
+        $supplier = str_replace('', '', trim($data[$i + 5], "\t     supplier   @"));
+        print ($client."->".$supplier);
+    }
+}
 
 ?>
