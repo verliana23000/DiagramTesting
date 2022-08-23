@@ -1,7 +1,7 @@
 
 (object Petal
     version    	50
-    _written   	"Rose 2006.0.0.060314"
+    _written   	"Rose 8.5.0506.2811"
     charSet    	0)
 
 (object Design "Logical View"
@@ -10,7 +10,7 @@
 	    tool       	"Java"
 	    name       	"IDE"
 	    value      	"Internal Editor"))
-    quid       	"5D2C87690154"
+    quid       	"5D3892E7002D"
     enforceClosureAutoLoad 	FALSE
     defaults   	(object defaults
 	rightMargin 	0.250000
@@ -36,237 +36,237 @@
 	showClassOfObject 	TRUE
 	notation   	"Unified")
     root_usecase_package 	(object Class_Category "Use Case View"
-	quid       	"5D2C87690156"
+	quid       	"5D3892E7002F"
 	exportControl 	"Public"
 	global     	TRUE
 	logical_models 	(list unit_reference_list)
 	statemachine 	(object State_Machine "State/Activity Model"
-	    quid       	"5D2C87B00370"
+	    quid       	"5D3895D90185"
 	    states     	(list States
 		(object State "$UNNAMED$0"
-		    quid       	"5D2C88A00125"
+		    quid       	"5D389601012F"
 		    type       	"StartState")
 		(object ActivityState "enter book code"
-		    quid       	"5D2C88A301F7")
+		    quid       	"5D38960D0376")
 		(object ActivityState "check avaibility"
-		    quid       	"5D2C88BD0059")
+		    quid       	"5D38961B0190")
 		(object Decision "$UNNAMED$1"
-		    quid       	"5D2C88D30205")
-		(object ActivityState "enter member code"
-		    quid       	"5D2C88EB0023")
-		(object ActivityState "update member code"
-		    quid       	"5D2C89030185")
+		    quid       	"5D38962F02E9")
 		(object ActivityState "display book not found"
-		    quid       	"5D2C891F00EC")
+		    quid       	"5D38963703DF")
 		(object State "$UNNAMED$2"
-		    quid       	"5D2C894B02A5"
+		    quid       	"5D38964C036E"
 		    type       	"EndState")
+		(object ActivityState "enter member code"
+		    quid       	"5D38965501C8")
+		(object ActivityState "update member code"
+		    quid       	"5D3896630132")
 		(object Decision "$UNNAMED$3"
-		    quid       	"5D2C8AB701F6")
-		(object ActivityState "check no of books issued to the member"
-		    quid       	"5D2C8ACC030E")
+		    quid       	"5D389685025A")
 		(object ActivityState "display not a valid member"
-		    quid       	"5D2C8B020022")
+		    quid       	"5D38968E028D")
 		(object State "$UNNAMED$4"
-		    quid       	"5D2C8B180260"
+		    quid       	"5D3896AB0129"
 		    type       	"EndState")
+		(object ActivityState "check no of books issued to the member"
+		    quid       	"5D3896B80159")
 		(object Decision "$UNNAMED$5"
-		    quid       	"5D2C8B3001A9")
-		(object ActivityState "display no more books to be issued"
-		    quid       	"5D2C8B4C006D")
-		(object ActivityState "create transaction"
-		    quid       	"5D2C8B6D0114")
+		    quid       	"5D3896D80025")
+		(object ActivityState "display no more to be issued"
+		    quid       	"5D3896E50022")
 		(object State "$UNNAMED$6"
-		    quid       	"5D2C8B7B0013"
+		    quid       	"5D3896FB01FA"
 		    type       	"EndState")
-		(object ActivityState "update book status"
-		    quid       	"5D2C8B800130")
-		(object ActivityState "update members details"
-		    quid       	"5D2C8B8C0284")
+		(object ActivityState "create transaction"
+		    quid       	"5D38970C019D")
 		(object ActivityState "add transaction"
-		    quid       	"5D2C8B9D0023")
+		    quid       	"5D38972002E4")
+		(object ActivityState "update book status"
+		    quid       	"5D38972C03BC")
+		(object ActivityState "update member details"
+		    quid       	"5D3897450230")
 		(object ActivityState "display book issued"
-		    quid       	"5D2C8BAD003B")
+		    quid       	"5D38975801B8")
 		(object State "$UNNAMED$7"
-		    quid       	"5D2C8BBD0247"
+		    quid       	"5D3897670038"
 		    type       	"EndState"))
 	    partitions 	(list Partitions
 		(object Partition "MemberLibrary"
-		    quid       	"5D2C87EC0385"
+		    quid       	"5D3895E3018D"
 		    persistence 	"Transient"
 		    creationObj 	FALSE
 		    multi      	FALSE)
 		(object Partition "Sistem"
-		    quid       	"5D2C87F5037F"
+		    quid       	"5D3895EA03CF"
 		    persistence 	"Transient"
 		    creationObj 	FALSE
 		    multi      	FALSE))
 	    objects    	(list Objects)
 	    transitions 	(list transition_list
 		(object State_Transition
-		    quid       	"5D2C88B002C5"
+		    quid       	"5D38961703D5"
 		    supplier   	"Use Case View::State/Activity Model::enter book code"
-		    supplier_quidu 	"5D2C88A301F7"
+		    supplier_quidu 	"5D38960D0376"
 		    client     	"$UNNAMED$0"
-		    client_quidu 	"5D2C88A00125"
+		    client_quidu 	"5D389601012F"
 		    sendEvent  	(object sendEvent
-			quid       	"5D2C88B002C8"))
+			quid       	"5D38961703D8"))
 		(object State_Transition
-		    quid       	"5D2C88CA02DF"
+		    quid       	"5D38962A01D6"
 		    supplier   	"Use Case View::State/Activity Model::check avaibility"
-		    supplier_quidu 	"5D2C88BD0059"
+		    supplier_quidu 	"5D38961B0190"
 		    client     	"Use Case View::State/Activity Model::enter book code"
-		    client_quidu 	"5D2C88A301F7"
+		    client_quidu 	"5D38960D0376"
 		    sendEvent  	(object sendEvent
-			quid       	"5D2C88CA02E2"))
+			quid       	"5D38962A01D9"))
 		(object State_Transition
-		    quid       	"5D2C88DE018E"
+		    quid       	"5D389634009E"
 		    supplier   	"$UNNAMED$1"
-		    supplier_quidu 	"5D2C88D30205"
+		    supplier_quidu 	"5D38962F02E9"
 		    client     	"Use Case View::State/Activity Model::check avaibility"
-		    client_quidu 	"5D2C88BD0059"
+		    client_quidu 	"5D38961B0190"
 		    sendEvent  	(object sendEvent
-			quid       	"5D2C88DE0191"))
+			quid       	"5D38963400A1"))
 		(object State_Transition
-		    quid       	"5D2C88F50004"
-		    supplier   	"Use Case View::State/Activity Model::enter member code"
-		    supplier_quidu 	"5D2C88EB0023"
-		    client     	"$UNNAMED$1"
-		    client_quidu 	"5D2C88D30205"
-		    sendEvent  	(object sendEvent
-			quid       	"5D2C88F50007"))
-		(object State_Transition
-		    quid       	"5D2C894200FF"
+		    quid       	"5D3896460185"
 		    supplier   	"Use Case View::State/Activity Model::display book not found"
-		    supplier_quidu 	"5D2C891F00EC"
+		    supplier_quidu 	"5D38963703DF"
 		    client     	"$UNNAMED$1"
-		    client_quidu 	"5D2C88D30205"
+		    client_quidu 	"5D38962F02E9"
 		    sendEvent  	(object sendEvent
-			quid       	"5D2C89420102"))
+			quid       	"5D3896460188"))
 		(object State_Transition
-		    quid       	"5D2C894F02C4"
+		    quid       	"5D389650038C"
 		    supplier   	"$UNNAMED$2"
-		    supplier_quidu 	"5D2C894B02A5"
+		    supplier_quidu 	"5D38964C036E"
 		    client     	"Use Case View::State/Activity Model::display book not found"
-		    client_quidu 	"5D2C891F00EC"
+		    client_quidu 	"5D38963703DF"
 		    sendEvent  	(object sendEvent
-			quid       	"5D2C894F02C7"))
+			quid       	"5D389650038F"))
 		(object State_Transition
-		    quid       	"5D2C89690127"
+		    quid       	"5D38965E001D"
+		    supplier   	"Use Case View::State/Activity Model::enter member code"
+		    supplier_quidu 	"5D38965501C8"
+		    client     	"$UNNAMED$1"
+		    client_quidu 	"5D38962F02E9"
+		    sendEvent  	(object sendEvent
+			quid       	"5D38965E0020"))
+		(object State_Transition
+		    quid       	"5D38966E02B9"
 		    supplier   	"Use Case View::State/Activity Model::update member code"
-		    supplier_quidu 	"5D2C89030185"
+		    supplier_quidu 	"5D3896630132"
 		    client     	"Use Case View::State/Activity Model::enter member code"
-		    client_quidu 	"5D2C88EB0023"
+		    client_quidu 	"5D38965501C8"
 		    sendEvent  	(object sendEvent
-			quid       	"5D2C8969012A"))
+			quid       	"5D38966E02BC"))
 		(object State_Transition
-		    quid       	"5D2C8ABA03AB"
+		    quid       	"5D38968A01CB"
 		    supplier   	"$UNNAMED$3"
-		    supplier_quidu 	"5D2C8AB701F6"
+		    supplier_quidu 	"5D389685025A"
 		    client     	"Use Case View::State/Activity Model::update member code"
-		    client_quidu 	"5D2C89030185"
+		    client_quidu 	"5D3896630132"
 		    sendEvent  	(object sendEvent
-			quid       	"5D2C8ABA03AE"))
+			quid       	"5D38968A01CE"))
 		(object State_Transition
-		    quid       	"5D2C8AF00168"
-		    supplier   	"Use Case View::State/Activity Model::check no of books issued to the member"
-		    supplier_quidu 	"5D2C8ACC030E"
-		    client     	"$UNNAMED$3"
-		    client_quidu 	"5D2C8AB701F6"
-		    sendEvent  	(object sendEvent
-			quid       	"5D2C8AF0016B"))
-		(object State_Transition
-		    quid       	"5D2C8B1100C4"
+		    quid       	"5D3896A50064"
 		    supplier   	"Use Case View::State/Activity Model::display not a valid member"
-		    supplier_quidu 	"5D2C8B020022"
+		    supplier_quidu 	"5D38968E028D"
 		    client     	"$UNNAMED$3"
-		    client_quidu 	"5D2C8AB701F6"
+		    client_quidu 	"5D389685025A"
 		    sendEvent  	(object sendEvent
-			quid       	"5D2C8B1100C7"))
+			quid       	"5D3896A50067"))
 		(object State_Transition
-		    quid       	"5D2C8B1E0215"
+		    quid       	"5D3896AF002B"
 		    supplier   	"$UNNAMED$4"
-		    supplier_quidu 	"5D2C8B180260"
+		    supplier_quidu 	"5D3896AB0129"
 		    client     	"Use Case View::State/Activity Model::display not a valid member"
-		    client_quidu 	"5D2C8B020022"
+		    client_quidu 	"5D38968E028D"
 		    sendEvent  	(object sendEvent
-			quid       	"5D2C8B1E0218"))
+			quid       	"5D3896AF002E"))
 		(object State_Transition
-		    quid       	"5D2C8B340021"
+		    quid       	"5D3896D00217"
+		    supplier   	"Use Case View::State/Activity Model::check no of books issued to the member"
+		    supplier_quidu 	"5D3896B80159"
+		    client     	"$UNNAMED$3"
+		    client_quidu 	"5D389685025A"
+		    sendEvent  	(object sendEvent
+			quid       	"5D3896D0021A"))
+		(object State_Transition
+		    quid       	"5D3896DF0314"
 		    supplier   	"$UNNAMED$5"
-		    supplier_quidu 	"5D2C8B3001A9"
+		    supplier_quidu 	"5D3896D80025"
 		    client     	"Use Case View::State/Activity Model::check no of books issued to the member"
-		    client_quidu 	"5D2C8ACC030E"
+		    client_quidu 	"5D3896B80159"
 		    sendEvent  	(object sendEvent
-			quid       	"5D2C8B340024"))
+			quid       	"5D3896DF0317"))
 		(object State_Transition
-		    quid       	"5D2C8BD00193"
-		    supplier   	"Use Case View::State/Activity Model::create transaction"
-		    supplier_quidu 	"5D2C8B6D0114"
+		    quid       	"5D3896F702C3"
+		    supplier   	"Use Case View::State/Activity Model::display no more to be issued"
+		    supplier_quidu 	"5D3896E50022"
 		    client     	"$UNNAMED$5"
-		    client_quidu 	"5D2C8B3001A9"
+		    client_quidu 	"5D3896D80025"
 		    sendEvent  	(object sendEvent
-			quid       	"5D2C8BD00196"))
+			quid       	"5D3896F702C6"))
 		(object State_Transition
-		    quid       	"5D2C8BD8034E"
-		    supplier   	"Use Case View::State/Activity Model::display no more books to be issued"
-		    supplier_quidu 	"5D2C8B4C006D"
-		    client     	"$UNNAMED$5"
-		    client_quidu 	"5D2C8B3001A9"
-		    sendEvent  	(object sendEvent
-			quid       	"5D2C8BD80351"))
-		(object State_Transition
-		    quid       	"5D2C8BDC035F"
+		    quid       	"5D3896FF01CE"
 		    supplier   	"$UNNAMED$6"
-		    supplier_quidu 	"5D2C8B7B0013"
-		    client     	"Use Case View::State/Activity Model::display no more books to be issued"
-		    client_quidu 	"5D2C8B4C006D"
+		    supplier_quidu 	"5D3896FB01FA"
+		    client     	"Use Case View::State/Activity Model::display no more to be issued"
+		    client_quidu 	"5D3896E50022"
 		    sendEvent  	(object sendEvent
-			quid       	"5D2C8BDC0362"))
+			quid       	"5D3896FF01D1"))
 		(object State_Transition
-		    quid       	"5D2C8BE7023E"
+		    quid       	"5D38971B01B6"
+		    supplier   	"Use Case View::State/Activity Model::create transaction"
+		    supplier_quidu 	"5D38970C019D"
+		    client     	"$UNNAMED$5"
+		    client_quidu 	"5D3896D80025"
+		    sendEvent  	(object sendEvent
+			quid       	"5D38971B01B9"))
+		(object State_Transition
+		    quid       	"5D389728025C"
 		    supplier   	"Use Case View::State/Activity Model::add transaction"
-		    supplier_quidu 	"5D2C8B9D0023"
+		    supplier_quidu 	"5D38972002E4"
 		    client     	"Use Case View::State/Activity Model::create transaction"
-		    client_quidu 	"5D2C8B6D0114"
+		    client_quidu 	"5D38970C019D"
 		    sendEvent  	(object sendEvent
-			quid       	"5D2C8BE70241"))
+			quid       	"5D389728025F"))
 		(object State_Transition
-		    quid       	"5D2C8C020111"
+		    quid       	"5D38973800C9"
 		    supplier   	"Use Case View::State/Activity Model::update book status"
-		    supplier_quidu 	"5D2C8B800130"
+		    supplier_quidu 	"5D38972C03BC"
 		    client     	"Use Case View::State/Activity Model::add transaction"
-		    client_quidu 	"5D2C8B9D0023"
+		    client_quidu 	"5D38972002E4"
 		    sendEvent  	(object sendEvent
-			quid       	"5D2C8C020114"))
+			quid       	"5D38973800CC"))
 		(object State_Transition
-		    quid       	"5D2C8C260057"
-		    supplier   	"Use Case View::State/Activity Model::update members details"
-		    supplier_quidu 	"5D2C8B8C0284"
+		    quid       	"5D3897530166"
+		    supplier   	"Use Case View::State/Activity Model::update member details"
+		    supplier_quidu 	"5D3897450230"
 		    client     	"Use Case View::State/Activity Model::update book status"
-		    client_quidu 	"5D2C8B800130"
+		    client_quidu 	"5D38972C03BC"
 		    sendEvent  	(object sendEvent
-			quid       	"5D2C8C26005A"))
+			quid       	"5D3897530169"))
 		(object State_Transition
-		    quid       	"5D2C8C320197"
+		    quid       	"5D38976300C0"
 		    supplier   	"Use Case View::State/Activity Model::display book issued"
-		    supplier_quidu 	"5D2C8BAD003B"
-		    client     	"Use Case View::State/Activity Model::update members details"
-		    client_quidu 	"5D2C8B8C0284"
+		    supplier_quidu 	"5D38975801B8"
+		    client     	"Use Case View::State/Activity Model::update member details"
+		    client_quidu 	"5D3897450230"
 		    sendEvent  	(object sendEvent
-			quid       	"5D2C8C32019A"))
+			quid       	"5D38976300C3"))
 		(object State_Transition
-		    quid       	"5D2C8C3B02F1"
+		    quid       	"5D38976A01C0"
 		    supplier   	"$UNNAMED$7"
-		    supplier_quidu 	"5D2C8BBD0247"
+		    supplier_quidu 	"5D3897670038"
 		    client     	"Use Case View::State/Activity Model::display book issued"
-		    client_quidu 	"5D2C8BAD003B"
+		    client_quidu 	"5D38975801B8"
 		    sendEvent  	(object sendEvent
-			quid       	"5D2C8C3B02F4")))
+			quid       	"5D38976A01C3")))
 	    objectflows 	(list objectflow_list)
 	    statediagrams 	(list StateDiagrams
 		(object ActivityDiagram "library"
-		    quid       	"5D2C87B0037E"
+		    quid       	"5D3895D90190"
 		    title      	"library"
 		    zoom       	100
 		    max_height 	28350
@@ -276,18 +276,34 @@
 		    items      	(list diagram_item_list
 			(object Swimlane "MemberLibrary" @1
 			    line_color 	3342489
-			    quidu      	"5D2C87EC0385"
-			    width      	580)
+			    quidu      	"5D3895E3018D"
+			    width      	510)
 			(object StateView "StartState" "$UNNAMED$0" @2
 			    Parent_View 	@1
-			    location   	(252, 53)
+			    location   	(222, 66)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@2
+				location   	(264, 36)
+				nlines     	2
+				max_width  	600
+				justify    	1
+				label      	"")
 			    icon_style 	"Icon"
 			    line_color 	3342489
-			    quidu      	"5D2C88A00125"
+			    quidu      	"5D389601012F"
 			    autoResize 	TRUE)
 			(object ActivityStateView "enter book code" @3
 			    Parent_View 	@1
-			    location   	(257, 185)
+			    location   	(263, 220)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -299,7 +315,7 @@
 				default_color 	TRUE)
 			    label      	(object ItemLabel
 				Parent_View 	@3
-				location   	(257, 188)
+				location   	(263, 223)
 				fill_color 	13434879
 				anchor_loc 	1
 				nlines     	2
@@ -309,24 +325,24 @@
 			    icon_style 	"Icon"
 			    line_color 	3342489
 			    fill_color 	13434879
-			    quidu      	"5D2C88A301F7"
+			    quidu      	"5D38960D0376"
 			    height     	106
 			    annotation 	1
 			    autoResize 	TRUE)
 			(object TransView "" @4
 			    stereotype 	TRUE
 			    line_color 	3342489
-			    quidu      	"5D2C88B002C5"
+			    quidu      	"5D38961703D5"
 			    client     	@2
 			    supplier   	@3
 			    vertices   	(list Points
-				(253, 82)
-				(254, 131))
+				(229, 96)
+				(248, 166))
 			    line_style 	0
 			    x_offset   	FALSE)
 			(object ActivityStateView "enter member code" @5
 			    Parent_View 	@1
-			    location   	(247, 338)
+			    location   	(247, 445)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -338,7 +354,7 @@
 				default_color 	TRUE)
 			    label      	(object ItemLabel
 				Parent_View 	@5
-				location   	(247, 341)
+				location   	(247, 448)
 				fill_color 	13434879
 				anchor_loc 	1
 				nlines     	2
@@ -348,13 +364,13 @@
 			    icon_style 	"Icon"
 			    line_color 	3342489
 			    fill_color 	13434879
-			    quidu      	"5D2C88EB0023"
+			    quidu      	"5D38965501C8"
 			    height     	106
 			    annotation 	1
 			    autoResize 	TRUE)
 			(object ActivityStateView "add transaction" @6
 			    Parent_View 	@1
-			    location   	(307, 1191)
+			    location   	(247, 1442)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -366,7 +382,7 @@
 				default_color 	TRUE)
 			    label      	(object ItemLabel
 				Parent_View 	@6
-				location   	(307, 1194)
+				location   	(247, 1445)
 				fill_color 	13434879
 				anchor_loc 	1
 				nlines     	2
@@ -376,13 +392,13 @@
 			    icon_style 	"Icon"
 			    line_color 	3342489
 			    fill_color 	13434879
-			    quidu      	"5D2C8B9D0023"
+			    quidu      	"5D38972002E4"
 			    height     	106
 			    annotation 	1
 			    autoResize 	TRUE)
 			(object ActivityStateView "display book issued" @7
 			    Parent_View 	@1
-			    location   	(323, 1564)
+			    location   	(247, 1919)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -394,7 +410,7 @@
 				default_color 	TRUE)
 			    label      	(object ItemLabel
 				Parent_View 	@7
-				location   	(323, 1567)
+				location   	(247, 1922)
 				fill_color 	13434879
 				anchor_loc 	1
 				nlines     	2
@@ -404,25 +420,41 @@
 			    icon_style 	"Icon"
 			    line_color 	3342489
 			    fill_color 	13434879
-			    quidu      	"5D2C8BAD003B"
+			    quidu      	"5D38975801B8"
 			    height     	106
 			    annotation 	1
 			    autoResize 	TRUE)
 			(object StateView "EndState" "$UNNAMED$7" @8
 			    Parent_View 	@1
-			    location   	(327, 1713)
+			    location   	(278, 2094)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@8
+				location   	(332, 2052)
+				nlines     	2
+				max_width  	600
+				justify    	1
+				label      	"")
 			    icon_style 	"Icon"
 			    line_color 	3342489
-			    quidu      	"5D2C8BBD0247"
+			    quidu      	"5D3897670038"
 			    autoResize 	TRUE)
 			(object Swimlane "Sistem" @9
-			    location   	(580, 0)
+			    location   	(510, 0)
 			    line_color 	3342489
-			    quidu      	"5D2C87F5037F"
-			    width      	1062)
+			    quidu      	"5D3895EA03CF"
+			    width      	1008)
 			(object ActivityStateView "check avaibility" @10
 			    Parent_View 	@9
-			    location   	(835, 184)
+			    location   	(761, 239)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -434,7 +466,7 @@
 				default_color 	TRUE)
 			    label      	(object ItemLabel
 				Parent_View 	@10
-				location   	(835, 187)
+				location   	(761, 242)
 				fill_color 	13434879
 				anchor_loc 	1
 				nlines     	2
@@ -444,54 +476,54 @@
 			    icon_style 	"Icon"
 			    line_color 	3342489
 			    fill_color 	13434879
-			    quidu      	"5D2C88BD0059"
+			    quidu      	"5D38961B0190"
 			    height     	106
 			    annotation 	1
 			    autoResize 	TRUE)
 			(object TransView "" @11
 			    stereotype 	TRUE
 			    line_color 	3342489
-			    quidu      	"5D2C88CA02DF"
+			    quidu      	"5D38962A01D6"
 			    client     	@3
 			    supplier   	@10
 			    vertices   	(list Points
-				(428, 184)
-				(663, 184))
+				(433, 226)
+				(590, 232))
 			    line_style 	0
 			    x_offset   	FALSE)
 			(object DecisionView "$UNNAMED$1" @12
 			    Parent_View 	@9
-			    location   	(830, 338)
+			    location   	(728, 434)
 			    icon_style 	"Icon"
 			    line_color 	3342489
 			    fill_color 	13434879
-			    quidu      	"5D2C88D30205"
+			    quidu      	"5D38962F02E9"
 			    autoResize 	TRUE)
 			(object TransView "" @13
 			    stereotype 	TRUE
 			    line_color 	3342489
-			    quidu      	"5D2C88DE018E"
+			    quidu      	"5D389634009E"
 			    client     	@10
 			    supplier   	@12
 			    vertices   	(list Points
-				(832, 236)
-				(830, 301))
+				(751, 291)
+				(728, 397))
 			    line_style 	0
 			    x_offset   	FALSE)
 			(object TransView "" @14
 			    stereotype 	TRUE
 			    line_color 	3342489
-			    quidu      	"5D2C88F50004"
+			    quidu      	"5D38965E001D"
 			    client     	@12
 			    supplier   	@5
 			    vertices   	(list Points
-				(755, 338)
-				(418, 338))
+				(653, 434)
+				(418, 440))
 			    line_style 	0
 			    x_offset   	FALSE)
-			(object ActivityStateView "update member code" @15
+			(object ActivityStateView "display book not found" @15
 			    Parent_View 	@9
-			    location   	(913, 507)
+			    location   	(1111, 422)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -503,35 +535,34 @@
 				default_color 	TRUE)
 			    label      	(object ItemLabel
 				Parent_View 	@15
-				location   	(913, 510)
+				location   	(1111, 425)
 				fill_color 	13434879
 				anchor_loc 	1
 				nlines     	2
 				max_width  	269
 				justify    	0
-				label      	"update member code")
+				label      	"display book not found")
 			    icon_style 	"Icon"
 			    line_color 	3342489
 			    fill_color 	13434879
-			    quidu      	"5D2C89030185"
+			    quidu      	"5D38963703DF"
 			    height     	106
 			    annotation 	1
 			    autoResize 	TRUE)
 			(object TransView "" @16
 			    stereotype 	TRUE
 			    line_color 	3342489
-			    quidu      	"5D2C89690127"
-			    client     	@5
+			    quidu      	"5D3896460185"
+			    client     	@12
 			    supplier   	@15
 			    vertices   	(list Points
-				(247, 391)
-				(247, 506)
-				(741, 506))
+				(803, 434)
+				(940, 428))
 			    line_style 	0
 			    x_offset   	FALSE)
-			(object ActivityStateView "display book not found" @17
+			(object StateView "EndState" "$UNNAMED$2" @17
 			    Parent_View 	@9
-			    location   	(1345, 337)
+			    location   	(1075, 563)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -543,71 +574,88 @@
 				default_color 	TRUE)
 			    label      	(object ItemLabel
 				Parent_View 	@17
-				location   	(1345, 340)
+				location   	(1129, 521)
+				nlines     	2
+				max_width  	600
+				justify    	1
+				label      	"")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    quidu      	"5D38964C036E"
+			    autoResize 	TRUE)
+			(object TransView "" @18
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5D389650038C"
+			    client     	@15
+			    supplier   	@17
+			    vertices   	(list Points
+				(1097, 475)
+				(1085, 520))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object ActivityStateView "update member code" @19
+			    Parent_View 	@9
+			    location   	(758, 664)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@19
+				location   	(758, 667)
 				fill_color 	13434879
 				anchor_loc 	1
 				nlines     	2
 				max_width  	269
 				justify    	0
-				label      	"display book not found")
+				label      	"update member code")
 			    icon_style 	"Icon"
 			    line_color 	3342489
 			    fill_color 	13434879
-			    quidu      	"5D2C891F00EC"
+			    quidu      	"5D3896630132"
 			    height     	106
 			    annotation 	1
-			    autoResize 	TRUE)
-			(object TransView "" @18
-			    stereotype 	TRUE
-			    line_color 	3342489
-			    quidu      	"5D2C894200FF"
-			    client     	@12
-			    supplier   	@17
-			    vertices   	(list Points
-				(905, 338)
-				(1173, 337))
-			    line_style 	0
-			    x_offset   	FALSE)
-			(object StateView "EndState" "$UNNAMED$2" @19
-			    Parent_View 	@9
-			    location   	(1344, 514)
-			    icon_style 	"Icon"
-			    line_color 	3342489
-			    quidu      	"5D2C894B02A5"
 			    autoResize 	TRUE)
 			(object TransView "" @20
 			    stereotype 	TRUE
 			    line_color 	3342489
-			    quidu      	"5D2C894F02C4"
-			    client     	@17
+			    quidu      	"5D38966E02B9"
+			    client     	@5
 			    supplier   	@19
 			    vertices   	(list Points
-				(1344, 390)
-				(1344, 471))
+				(245, 497)
+				(241, 663)
+				(586, 663))
 			    line_style 	0
 			    x_offset   	FALSE)
 			(object DecisionView "$UNNAMED$3" @21
 			    Parent_View 	@9
-			    location   	(911, 703)
+			    location   	(739, 816)
 			    icon_style 	"Icon"
 			    line_color 	3342489
 			    fill_color 	13434879
-			    quidu      	"5D2C8AB701F6"
+			    quidu      	"5D389685025A"
 			    autoResize 	TRUE)
 			(object TransView "" @22
 			    stereotype 	TRUE
 			    line_color 	3342489
-			    quidu      	"5D2C8ABA03AB"
-			    client     	@15
+			    quidu      	"5D38968A01CB"
+			    client     	@19
 			    supplier   	@21
 			    vertices   	(list Points
-				(912, 560)
-				(911, 666))
+				(751, 716)
+				(739, 779))
 			    line_style 	0
 			    x_offset   	FALSE)
-			(object ActivityStateView "check no of books issued to the member" @23
+			(object ActivityStateView "display not a valid member" @23
 			    Parent_View 	@9
-			    location   	(912, 876)
+			    location   	(1125, 800)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -619,35 +667,34 @@
 				default_color 	TRUE)
 			    label      	(object ItemLabel
 				Parent_View 	@23
-				location   	(912, 879)
+				location   	(1125, 803)
 				fill_color 	13434879
 				anchor_loc 	1
 				nlines     	2
-				max_width  	436
+				max_width  	269
 				justify    	0
-				label      	"check no of books issued to the member")
+				label      	"display not a valid member")
 			    icon_style 	"Icon"
 			    line_color 	3342489
 			    fill_color 	13434879
-			    quidu      	"5D2C8ACC030E"
-			    width      	542
+			    quidu      	"5D38968E028D"
 			    height     	106
 			    annotation 	1
 			    autoResize 	TRUE)
 			(object TransView "" @24
 			    stereotype 	TRUE
 			    line_color 	3342489
-			    quidu      	"5D2C8AF00168"
+			    quidu      	"5D3896A50064"
 			    client     	@21
 			    supplier   	@23
 			    vertices   	(list Points
-				(911, 740)
-				(911, 822))
+				(814, 816)
+				(954, 808))
 			    line_style 	0
 			    x_offset   	FALSE)
-			(object ActivityStateView "display not a valid member" @25
+			(object StateView "EndState" "$UNNAMED$4" @25
 			    Parent_View 	@9
-			    location   	(1377, 703)
+			    location   	(1114, 953)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -659,71 +706,88 @@
 				default_color 	TRUE)
 			    label      	(object ItemLabel
 				Parent_View 	@25
-				location   	(1377, 706)
-				fill_color 	13434879
-				anchor_loc 	1
+				location   	(1168, 911)
 				nlines     	2
-				max_width  	269
-				justify    	0
-				label      	"display not a valid member")
+				max_width  	600
+				justify    	1
+				label      	"")
 			    icon_style 	"Icon"
 			    line_color 	3342489
-			    fill_color 	13434879
-			    quidu      	"5D2C8B020022"
-			    height     	106
-			    annotation 	1
+			    quidu      	"5D3896AB0129"
 			    autoResize 	TRUE)
 			(object TransView "" @26
 			    stereotype 	TRUE
 			    line_color 	3342489
-			    quidu      	"5D2C8B1100C4"
-			    client     	@21
+			    quidu      	"5D3896AF002B"
+			    client     	@23
 			    supplier   	@25
 			    vertices   	(list Points
-				(986, 703)
-				(1206, 703))
+				(1121, 853)
+				(1117, 911))
 			    line_style 	0
 			    x_offset   	FALSE)
-			(object StateView "EndState" "$UNNAMED$4" @27
+			(object ActivityStateView "check no of books issued to the member" @27
 			    Parent_View 	@9
-			    location   	(1374, 875)
+			    location   	(850, 1092)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@27
+				location   	(850, 1095)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	436
+				justify    	0
+				label      	"check no of books issued to the member")
 			    icon_style 	"Icon"
 			    line_color 	3342489
-			    quidu      	"5D2C8B180260"
+			    fill_color 	13434879
+			    quidu      	"5D3896B80159"
+			    width      	542
+			    height     	106
+			    annotation 	1
 			    autoResize 	TRUE)
 			(object TransView "" @28
 			    stereotype 	TRUE
 			    line_color 	3342489
-			    quidu      	"5D2C8B1E0215"
-			    client     	@25
+			    quidu      	"5D3896D00217"
+			    client     	@21
 			    supplier   	@27
 			    vertices   	(list Points
-				(1376, 756)
-				(1374, 833))
+				(739, 853)
+				(825, 1039))
 			    line_style 	0
 			    x_offset   	FALSE)
 			(object DecisionView "$UNNAMED$5" @29
 			    Parent_View 	@9
-			    location   	(913, 1047)
+			    location   	(842, 1241)
 			    icon_style 	"Icon"
 			    line_color 	3342489
 			    fill_color 	13434879
-			    quidu      	"5D2C8B3001A9"
+			    quidu      	"5D3896D80025"
 			    autoResize 	TRUE)
 			(object TransView "" @30
 			    stereotype 	TRUE
 			    line_color 	3342489
-			    quidu      	"5D2C8B340021"
-			    client     	@23
+			    quidu      	"5D3896DF0314"
+			    client     	@27
 			    supplier   	@29
 			    vertices   	(list Points
-				(912, 929)
-				(913, 1010))
+				(847, 1145)
+				(842, 1204))
 			    line_style 	0
 			    x_offset   	FALSE)
-			(object ActivityStateView "display no more books to be issued" @31
+			(object ActivityStateView "display no more to be issued" @31
 			    Parent_View 	@9
-			    location   	(1358, 1046)
+			    location   	(1244, 1234)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -735,59 +799,35 @@
 				default_color 	TRUE)
 			    label      	(object ItemLabel
 				Parent_View 	@31
-				location   	(1358, 1049)
+				location   	(1244, 1237)
 				fill_color 	13434879
 				anchor_loc 	1
 				nlines     	2
-				max_width  	342
+				max_width  	322
 				justify    	0
-				label      	"display no more books to be issued")
+				label      	"display no more to be issued")
 			    icon_style 	"Icon"
 			    line_color 	3342489
 			    fill_color 	13434879
-			    quidu      	"5D2C8B4C006D"
-			    width      	448
+			    quidu      	"5D3896E50022"
+			    width      	428
 			    height     	106
 			    annotation 	1
 			    autoResize 	TRUE)
-			(object ActivityStateView "create transaction" @32
-			    Parent_View 	@9
-			    location   	(912, 1192)
-			    font       	(object Font
-				size       	10
-				face       	"Arial"
-				bold       	FALSE
-				italics    	FALSE
-				underline  	FALSE
-				strike     	FALSE
-				color      	0
-				default_color 	TRUE)
-			    label      	(object ItemLabel
-				Parent_View 	@32
-				location   	(912, 1195)
-				fill_color 	13434879
-				anchor_loc 	1
-				nlines     	2
-				max_width  	269
-				justify    	0
-				label      	"create transaction")
-			    icon_style 	"Icon"
+			(object TransView "" @32
+			    stereotype 	TRUE
 			    line_color 	3342489
-			    fill_color 	13434879
-			    quidu      	"5D2C8B6D0114"
-			    height     	106
-			    annotation 	1
-			    autoResize 	TRUE)
+			    quidu      	"5D3896F702C3"
+			    client     	@29
+			    supplier   	@31
+			    vertices   	(list Points
+				(917, 1241)
+				(1052, 1238))
+			    line_style 	0
+			    x_offset   	FALSE)
 			(object StateView "EndState" "$UNNAMED$6" @33
 			    Parent_View 	@9
-			    location   	(1355, 1197)
-			    icon_style 	"Icon"
-			    line_color 	3342489
-			    quidu      	"5D2C8B7B0013"
-			    autoResize 	TRUE)
-			(object ActivityStateView "update book status" @34
-			    Parent_View 	@9
-			    location   	(902, 1371)
+			    location   	(1244, 1392)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -798,24 +838,30 @@
 				color      	0
 				default_color 	TRUE)
 			    label      	(object ItemLabel
-				Parent_View 	@34
-				location   	(902, 1374)
-				fill_color 	13434879
-				anchor_loc 	1
+				Parent_View 	@33
+				location   	(1298, 1350)
 				nlines     	2
-				max_width  	269
-				justify    	0
-				label      	"update book status")
+				max_width  	600
+				justify    	1
+				label      	"")
 			    icon_style 	"Icon"
 			    line_color 	3342489
-			    fill_color 	13434879
-			    quidu      	"5D2C8B800130"
-			    height     	106
-			    annotation 	1
+			    quidu      	"5D3896FB01FA"
 			    autoResize 	TRUE)
-			(object ActivityStateView "update members details" @35
+			(object TransView "" @34
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5D3896FF01CE"
+			    client     	@31
+			    supplier   	@33
+			    vertices   	(list Points
+				(1244, 1287)
+				(1244, 1350))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object ActivityStateView "create transaction" @35
 			    Parent_View 	@9
-			    location   	(899, 1564)
+			    location   	(814, 1435)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -827,117 +873,151 @@
 				default_color 	TRUE)
 			    label      	(object ItemLabel
 				Parent_View 	@35
-				location   	(899, 1567)
+				location   	(814, 1438)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	269
+				justify    	0
+				label      	"create transaction")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"5D38970C019D"
+			    height     	106
+			    annotation 	1
+			    autoResize 	TRUE)
+			(object TransView "" @36
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5D38971B01B6"
+			    client     	@29
+			    supplier   	@35
+			    vertices   	(list Points
+				(842, 1278)
+				(823, 1382))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @37
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5D389728025C"
+			    client     	@35
+			    supplier   	@6
+			    vertices   	(list Points
+				(642, 1437)
+				(418, 1439))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object ActivityStateView "update book status" @38
+			    Parent_View 	@9
+			    location   	(760, 1689)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@38
+				location   	(760, 1692)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	269
+				justify    	0
+				label      	"update book status")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"5D38972C03BC"
+			    height     	106
+			    annotation 	1
+			    autoResize 	TRUE)
+			(object TransView "" @39
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5D38973800C9"
+			    client     	@6
+			    supplier   	@38
+			    vertices   	(list Points
+				(248, 1494)
+				(253, 1688)
+				(588, 1688))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object ActivityStateView "update member details" @40
+			    Parent_View 	@9
+			    location   	(784, 1901)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@40
+				location   	(784, 1904)
 				fill_color 	13434879
 				anchor_loc 	1
 				nlines     	2
 				max_width  	322
 				justify    	0
-				label      	"update members details")
+				label      	"update member details")
 			    icon_style 	"Icon"
 			    line_color 	3342489
 			    fill_color 	13434879
-			    quidu      	"5D2C8B8C0284"
+			    quidu      	"5D3897450230"
 			    width      	428
 			    height     	106
 			    annotation 	1
 			    autoResize 	TRUE)
-			(object Swimlane "" @36
-			    location   	(1642, 0)
-			    line_color 	3342489
-			    width      	450)
-			(object TransView "" @37
-			    stereotype 	TRUE
-			    line_color 	3342489
-			    quidu      	"5D2C8BD00193"
-			    client     	@29
-			    supplier   	@32
-			    vertices   	(list Points
-				(913, 1084)
-				(912, 1139))
-			    line_style 	0
-			    x_offset   	FALSE)
-			(object TransView "" @38
-			    stereotype 	TRUE
-			    line_color 	3342489
-			    quidu      	"5D2C8BD8034E"
-			    client     	@29
-			    supplier   	@31
-			    vertices   	(list Points
-				(988, 1047)
-				(1158, 1046))
-			    line_style 	0
-			    x_offset   	FALSE)
-			(object TransView "" @39
-			    stereotype 	TRUE
-			    line_color 	3342489
-			    quidu      	"5D2C8BDC035F"
-			    client     	@31
-			    supplier   	@33
-			    vertices   	(list Points
-				(1356, 1098)
-				(1355, 1154))
-			    line_style 	0
-			    x_offset   	FALSE)
-			(object TransView "" @40
-			    stereotype 	TRUE
-			    line_color 	3342489
-			    quidu      	"5D2C8BE7023E"
-			    client     	@32
-			    supplier   	@6
-			    vertices   	(list Points
-				(740, 1191)
-				(478, 1191))
-			    line_style 	0
-			    x_offset   	FALSE)
 			(object TransView "" @41
 			    stereotype 	TRUE
 			    line_color 	3342489
-			    quidu      	"5D2C8C020111"
-			    client     	@6
-			    supplier   	@34
+			    quidu      	"5D3897530166"
+			    client     	@38
+			    supplier   	@40
 			    vertices   	(list Points
-				(306, 1243)
-				(306, 1372)
-				(730, 1371))
+				(766, 1742)
+				(778, 1848))
 			    line_style 	0
 			    x_offset   	FALSE)
 			(object TransView "" @42
 			    stereotype 	TRUE
 			    line_color 	3342489
-			    quidu      	"5D2C8C260057"
-			    client     	@34
-			    supplier   	@35
-			    vertices   	(list Points
-				(901, 1424)
-				(899, 1511))
-			    line_style 	0
-			    x_offset   	FALSE)
-			(object TransView "" @43
-			    stereotype 	TRUE
-			    line_color 	3342489
-			    quidu      	"5D2C8C320197"
-			    client     	@35
+			    quidu      	"5D38976300C0"
+			    client     	@40
 			    supplier   	@7
 			    vertices   	(list Points
-				(708, 1564)
-				(494, 1564))
+				(593, 1907)
+				(417, 1913))
 			    line_style 	0
 			    x_offset   	FALSE)
+			(object Swimlane "" @43
+			    location   	(1518, 0)
+			    line_color 	3342489
+			    width      	450)
 			(object TransView "" @44
 			    stereotype 	TRUE
 			    line_color 	3342489
-			    quidu      	"5D2C8C3B02F1"
+			    quidu      	"5D38976A01C0"
 			    client     	@7
 			    supplier   	@8
 			    vertices   	(list Points
-				(324, 1617)
-				(325, 1671))
+				(256, 1972)
+				(270, 2051))
 			    line_style 	0
 			    x_offset   	FALSE)))))
 	logical_presentations 	(list unit_reference_list
 	    (object UseCaseDiagram "Main"
-		quid       	"5D2C8779033A"
+		quid       	"5D3892EA01D4"
 		title      	"Main"
 		zoom       	100
 		max_height 	28350
@@ -946,15 +1026,15 @@
 		origin_y   	0
 		items      	(list diagram_item_list))))
     root_category 	(object Class_Category "Logical View"
-	quid       	"5D2C87690155"
+	quid       	"5D3892E7002E"
 	exportControl 	"Public"
 	global     	TRUE
 	subsystem  	"Component View"
-	quidu      	"5D2C8769016F"
+	quidu      	"5D3892E70030"
 	logical_models 	(list unit_reference_list)
 	logical_presentations 	(list unit_reference_list
 	    (object ClassDiagram "Main"
-		quid       	"5D2C8779036A"
+		quid       	"5D3892EA01EC"
 		title      	"Main"
 		zoom       	100
 		max_height 	28350
@@ -963,11 +1043,11 @@
 		origin_y   	0
 		items      	(list diagram_item_list))))
     root_subsystem 	(object SubSystem "Component View"
-	quid       	"5D2C8769016F"
+	quid       	"5D3892E70030"
 	physical_models 	(list unit_reference_list)
 	physical_presentations 	(list unit_reference_list
 	    (object Module_Diagram "Main"
-		quid       	"5D2C87790339"
+		quid       	"5D3892EA01D3"
 		title      	"Main"
 		zoom       	100
 		max_height 	28350
@@ -976,12 +1056,12 @@
 		origin_y   	0
 		items      	(list diagram_item_list)))
 	category   	"Logical View"
-	quidu      	"5D2C87690155")
+	quidu      	"5D3892E7002E")
     process_structure 	(object Processes
-	quid       	"5D2C87690170"
+	quid       	"5D3892E70031"
 	ProcsNDevs 	(list
 	    (object Process_Diagram "Deployment View"
-		quid       	"5D2C87690172"
+		quid       	"5D3892E70033"
 		title      	"Deployment View"
 		zoom       	100
 		max_height 	28350
@@ -1873,650 +1953,6 @@
 				value      	104)))))
 	    (object Attribute
 		tool       	"CORBA"
-		name       	"HiddenTool"
-		value      	FALSE)
-	    (object Attribute
-		tool       	"Data Modeler"
-		name       	"propertyId"
-		value      	"809135966")
-	    (object Attribute
-		tool       	"Data Modeler"
-		name       	"default__Project"
-		value      	(list Attribute_Set
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"project"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"TableCounter"
-			value      	0)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"ViewCounter"
-			value      	0)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"DomainCounter"
-			value      	0)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"SPPackageCounter"
-			value      	0)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"TriggerCounter"
-			value      	0)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IndexCounter"
-			value      	0)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"ConstraintCounter"
-			value      	0)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"StoreProcedureCounter"
-			value      	0)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"PrimaryKeyCounter"
-			value      	0)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"ForeignKeyCounter"
-			value      	0)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"JoinCounter"
-			value      	0)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"TableSpaceCounter"
-			value      	0)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"cONTAINERCounter"
-			value      	0)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"TablePrefix"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"ViewPrefix"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"DomainPrefix"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"TriggerPrefix"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IndexPrefix"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"ConstraintPrefix"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"StoreProcedurePrefix"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"PrimaryKeyPrefix"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"ForeignKeyPrefix"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"TableSpacePrefix"
-			value      	"")))
-	    (object Attribute
-		tool       	"Data Modeler"
-		name       	"default__Module-Spec"
-		value      	(list Attribute_Set
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"dmItem"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"DMName"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IsDatabase"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"TargetDatabase"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"Location"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IsTableSpace"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"TableSpaceType"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IsDeault"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"BufferPool"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"ExtentSize"
-			value      	1)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"PrefetchSize"
-			value      	1)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"PageSize"
-			value      	4)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"ManagedBy"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"ContainerList"
-			value      	"")))
-	    (object Attribute
-		tool       	"Data Modeler"
-		name       	"default__Category"
-		value      	(list Attribute_Set
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"dmItem"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"DMName"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"dmSchema"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"dmDomainPackage"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IsSchema"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IsDomainPackage"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IsRootSchema"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IsRootDomainPackage"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IsSchemaPackage"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"DatabaseID"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"DBMS"
-			value      	"")))
-	    (object Attribute
-		tool       	"Data Modeler"
-		name       	"default__Class"
-		value      	(list Attribute_Set
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"dmItem"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"DMName"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IsTable"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IsView"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IsDomain"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IsSPPackage"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"Synonymns"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"TableSpaceID"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"SourceId"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"SourceType"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"CorrelationName"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"SelectClause"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IsUpdateable"
-			value      	TRUE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"CheckOption"
-			value      	"None")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IsSnapShot"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IsDistinct"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"PersistToServer"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IsPackage"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IsPackageWrapped"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IsPackageBodyWrapped"
-			value      	FALSE)))
-	    (object Attribute
-		tool       	"Data Modeler"
-		name       	"default__Attribute"
-		value      	(list Attribute_Set
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"dmItem"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"DMName"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"Ordinal"
-			value      	0)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IsIdentity"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IsUnique"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"NullsAllowed"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"Length"
-			value      	0)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"Scale"
-			value      	0)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"ColumnType"
-			value      	"Native")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"ForBitData"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"DefaultValueType"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"DefaultValue"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"SourceId"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"SourceType"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"OID"
-			value      	FALSE)))
-	    (object Attribute
-		tool       	"Data Modeler"
-		name       	"default__Association"
-		value      	(list Attribute_Set
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"dmItem"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"DMName"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IsRelationship"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"SourceId"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"SourceType"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"RIMethod"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"ParentUpdateRule"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"ParentUpdateRuleName"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"ParentDeleteRule"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"ParentDeleteRuleName"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"ChildInsertRestrict"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"ChildInsertRestrictName"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"ChildMultiplicity"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"ChildMultiplicityName"
-			value      	"")))
-	    (object Attribute
-		tool       	"Data Modeler"
-		name       	"default__Role"
-		value      	(list Attribute_Set
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"dmItem"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"DMName"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"ConstraintName"
-			value      	"")))
-	    (object Attribute
-		tool       	"Data Modeler"
-		name       	"default__Operation"
-		value      	(list Attribute_Set
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"dmItem"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"DMName"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IsConstraint"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"ConstraintType"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IsIndex"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IsTrigger"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IsStoredProcedure"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IsCluster"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"TableSpace"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"FillFactor"
-			value      	0)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"KeyList"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"CheckPredicate"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IsUnique"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"DeferalMode"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"InitialCheckTime"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"TriggerType"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IsInsertEvent"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IsUpdateEvent"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IsDeleteEvent"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"RefOldTable"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"RefNewTable"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"RefOldRow"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"RefNewRow"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IsRow"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"WhenClause"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"Language"
-			value      	"SQL")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"ProcType"
-			value      	"Procedure")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IsDeterministic"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"ParameterStyle"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"ReturnedNull"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"ExternalName"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"Length"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"Scale"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"ForBitData"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"DefaultValue"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"DefaultValueType"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IsWrapped"
-			value      	FALSE)))
-	    (object Attribute
-		tool       	"Data Modeler"
-		name       	"default__Parameter"
-		value      	(list Attribute_Set
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"dmItem"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"DMName"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IsInParameter"
-			value      	TRUE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"IsOutParameter"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"Ordinal"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"Length"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"Scale"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"ForBitData"
-			value      	FALSE)
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"DefaultValueType"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"DefaultValue"
-			value      	"")
-		    (object Attribute
-			tool       	"Data Modeler"
-			name       	"OperationID"
-			value      	"")))
-	    (object Attribute
-		tool       	"Data Modeler"
-		name       	"HiddenTool"
-		value      	FALSE)
-	    (object Attribute
-		tool       	"Data Modeler Communicator"
 		name       	"HiddenTool"
 		value      	FALSE)
 	    (object Attribute
@@ -3644,6 +3080,10 @@
 		name       	"HiddenTool"
 		value      	FALSE)
 	    (object Attribute
+		tool       	"ComponentTest"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
 		tool       	"Rose Model Integrator"
 		name       	"HiddenTool"
 		value      	FALSE)
@@ -4559,10 +3999,6 @@
 		name       	"HiddenTool"
 		value      	FALSE)
 	    (object Attribute
-		tool       	"Web Modeler"
-		name       	"HiddenTool"
-		value      	FALSE)
-	    (object Attribute
 		tool       	"XML_DTD"
 		name       	"propertyId"
 		value      	"809135966")
@@ -4654,4 +4090,4 @@
 		tool       	"XML_DTD"
 		name       	"HiddenTool"
 		value      	FALSE))
-	quid       	"5D2C87690171"))
+	quid       	"5D3892E70032"))

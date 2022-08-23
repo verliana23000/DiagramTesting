@@ -1,8 +1,11 @@
 <?php
 
+include_once "methods.php";
+
 $data = file('library.ptl');
 $hasil = array();
 $counter = 0;
+
 /**
  * Pencarian:
  * Activity State
@@ -13,71 +16,46 @@ $counter = 0;
  */
 
 
+print "\n";
+print "==================================== Activity Dependency Table =============================================\n";
+
+
+
 /** 
  * Looping Pertama pembuatan adt
  * untuk mencari State, Activity Name, dan ID 
  * */
+
 for ($i = 0; $i < count($data); $i++) {
 
     // Activity State
     if ((str_contains($data[$i], '(object ActivityStateView '))) {
         $activity_state = "ActivityState";
-
-        $activity_name = str_replace('"', '', trim($data[$i], "\t     (object ActivityStateView "));
-        $activity_name = str_replace('@', '', trim($activity_name));
-        $id = substr($activity_name, -2);
-        $activity_name = preg_replace('/[0-9]+/', '', $activity_name);
+        $activity_name = preprocessingNameActivity($data[$i]);
+        $id = preprocessingID($activity_name);
+        $activity_name = preprocessingNameFinal($activity_name);
         $counter++;
-
-        $hasil[$counter] = array(
-            "State" => $activity_state,
-            "Activity Name" => $activity_name,
-            "ID" => $id,
-            "Dependency" => ""
-        );
+        $hasil[$counter] = returningArrayWithoutDependency($activity_state, $activity_name, $id);
     }
 
     // DecisionState
     elseif ((str_contains($data[$i], '(object DecisionView '))) {
         $activity_state = "DecisionState";
-
-        $activity_name = str_replace('"', '', trim($data[$i], "\t     (object DecisionView "));
-        $activity_name = str_replace('@', '', trim($activity_name));
-        $id = substr($activity_name, -2);
-        $activity_name = preg_replace('/[0-9]+/', '', $activity_name);
+        $activity_name = preprocessingNameDecision($data[$i]);
+        $id = preprocessingID($activity_name);
+        $activity_name = preprocessingNameFinal($activity_name);
         $counter++;
-
-        $hasil[$counter] = array(
-            "State" => $activity_state,
-            "Activity Name" => $activity_name,
-            "ID" => $id,
-            "Dependency" => ""
-        );
+        $hasil[$counter] = returningArrayWithoutDependency($activity_state, $activity_name, $id);
     }
 
     //StartState & EndState
     elseif ((str_contains($data[$i], '(object StateView '))) {
-        $activity_state = str_replace('"', '', trim($data[$i], "\t     (object StateView "));
-        $activity_state = str_replace('@', '', trim($activity_state));
-        $activity_state = str_replace('$', '', trim($activity_state));
-        $activity_state = preg_replace('/UNNAMED/i', '', $activity_state);
-        $activity_state = preg_replace('/[0-9]+/', '', $activity_state);
-        $activity_state = str_replace(' ', '', trim($activity_state));
-
-        $activity_name = str_replace('"', '', trim($data[$i], "\t     (object StateView "));
-        $activity_name = preg_replace('/StartState/', '', $activity_name);
-        $activity_name = preg_replace('/EndState/', '', $activity_name);
-        $activity_name = str_replace('@', '', trim($activity_name));
-        $id = substr($activity_name, -2);
-        $activity_name = preg_replace('/[0-9]+/', '', $activity_name);
+        $activity_state = preprocessingStateStartEnd($data[$i]);
+        $activity_name = preprocessingNameStartEnd($data[$i]);
+        $id = preprocessingID($activity_name);
+        $activity_name = preprocessingNameFinal($activity_name);
         $counter++;
-
-        $hasil[$counter] = array(
-            "State" => $activity_state,
-            "Activity Name" => $activity_name,
-            "ID" => $id,
-            "Dependency" => ""
-        );
+        $hasil[$counter] = returningArrayWithoutDependency($activity_state, $activity_name, $id);
     }
 }
 
@@ -87,18 +65,13 @@ for ($i = 0; $i < count($data); $i++) {
  * */
 
 for ($i = 0; $i < count($data); $i++) {
-
     if ((str_contains($data[$i], '(object TransView '))) {
-
-        $client = str_replace('"', '', trim($data[$i + 4], "\t     client\t@ \n"));
-        $supplier = str_replace('"', '', trim($data[$i + 5], "\t     supplier\t@ \n"));
-
+        $client = preprocessingDependency($data[$i + 4]);
+        $supplier = preprocessingSupplier($data[$i + 5]);
         for ($urutan = 1; $urutan <= count($hasil); $urutan++) {
-
             if ($hasil[$urutan]['ID'] == $supplier) {
                 $hasil[$urutan]["Dependency"] = $client;
-            }
-            else if ($hasil[$urutan]["State"] == "StartState") {
+            } else if ($hasil[$urutan]["State"] == "StartState") {
                 $hasil[$urutan]["Dependency"] = 0;
             }
         }
@@ -106,20 +79,164 @@ for ($i = 0; $i < count($data); $i++) {
 }
 print_r($hasil);
 
+print "\n";
+print "==================================== Activity Dependency Graph ========================================\n";
+
 /** 
  * Looping Ketiga pembuatan adg
  * untuk mencari graph
  * */
 
-for ($i = 0; $i < count($data); $i++) {
+$bfs = array();
 
-    if ((str_contains($data[$i], '(object TransView '))) {
+/**
+ * [1] => Array
+ * (
+ *      [ID Awal] => 0
+ *      [Activity Awal] => UNNAMED
+ *      [ID Tujuan] => 2
+ *      [Activity Tujuan] => start state
+ * )
+ */
 
-        $client = str_replace('', '', trim($data[$i + 4], "\t     client   @"));
-        $client = str_replace('\t', '', trim($client));
-        $supplier = str_replace('', '', trim($data[$i + 5], "\t     supplier   @"));
-        print ($client."->".$supplier);
+$adg = array();
+$flag = 0;
+foreach ($hasil as $key => $value) {
+    $flag++;
+    $dependency = $value['Dependency'];
+    $id = $value['ID'];
+
+    $adg[$flag]['ID Awal'] = $dependency;
+
+    if ($dependency == 0) {
+        $adg[$flag]['Activity Awal'] = "UNNAMED";
+    } else {
+        $adg[$flag]['Activity Awal'] = "";
+    }
+
+    $adg[$flag]['ID Tujuan'] = $id;
+    if (str_contains($value['Activity Name'], "UNNAMED")) {
+        $adg[$flag]['Activity Tujuan'] = $value['State'];
+    } else {
+        $adg[$flag]['Activity Tujuan'] = $value['Activity Name'];
     }
 }
 
-?>
+
+
+// $awal = array_column($hasil, 'ID', 'Activity Name');
+// print_r($awal);
+
+// $loop = true;
+// $total = count($hasil);
+// $counter = 0;
+// while($loop){
+//     $counter++;
+
+//     if ($counter == $total) {
+//         $loop = false;
+//     }
+// }
+
+// foreach ($hasil as $key => $value) {
+//     $id = $value['ID'];
+//     $key = array_search($id, $awal);
+//     print($id . " --- " . $key . " " . $hasil[$key + 1]['Activity Name'] . "\n");
+// }
+// $key = array_search($id, $awal);
+// $adg[$flag]['Activity Awal'] = $hasil[$key]['Activity Name'];
+
+
+print_r($adg);
+
+foreach ($hasil as $key => $value) {
+    $dependency = $value['Dependency'];
+    $id = $value['ID'];
+    $bfs[$dependency][] = $id;
+}
+ksort($bfs);
+// print_r($bfs);
+
+foreach ($bfs as $key => $value) {
+    foreach ($value as $index => $content) {
+        print($key . " -> " . $content . "\n");
+    }
+}
+// print_r($bfs);
+
+/** 
+ * Looping Keempat penerapan algoritma bfs untuk setiap path
+ * */
+
+//     $start = 0;
+//     $path = array();
+//     $cabang= array();
+//     $sementara=array();
+//     $index_path = 0;
+//     $count = 0;
+//     foreach ($hasil as $key => $value) {
+//         foreach($hasil as $k => $v){
+//             if($value['Dependency'] == $v['Dependency']){
+//                 $count++;
+//             }
+//         }
+//         if($count>1){
+//             array_push($cabang,$value['Dependency']);
+//         }
+//         $count=0;
+//     }
+//     foreach ($hasil as $key => $value) {
+//         foreach($hasil as $k => $v){
+//             if($start == $v['Dependency']){
+//                 if($cabang[0]==$v['ID'])
+//                 {
+//                     $count++;
+//                 }
+//                 if($count>=0)
+//                 {
+//                     $sementara[]=$v['ID'];
+//                     $start=$v['ID'];
+//                 }else{
+//                     array_push($path,$v['ID']);
+//                     // $start=$v['ID'];
+//                 }
+//             }
+//         }
+//         if(count($sementara))
+//         {
+
+//         }
+
+//     }
+// print_r ($sementara);
+print "\n";
+print "==================================== Test Path =====================================================\n";
+
+$start = 0;
+$path = array();
+
+
+//     $start = 0;
+//     $path = array();
+//     $index_path = 0;
+//     $count = 0;
+//     foreach ($hasil as $key => $value) {
+//         if($start == $value['Dependency']){
+//             array_push($path,$value['ID']);
+//             foreach($hasil as $k => $v){
+//                 if($value['ID'] == $v['Dependency']){
+//                     $count++;
+//                 }
+//             }
+//             for ($j=0; $j>$count; $j++){
+//                 $path[$i] = array_push($path,$value['ID']);
+//             }
+//             if($count > 1){
+//                     $path[$index_path] = $path[$index_path-1];
+//                     $index_path++;
+
+//                 }
+//             }
+//         } 
+    
+// print_r ($path);
